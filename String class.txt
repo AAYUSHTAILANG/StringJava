@@ -1,5 +1,5 @@
-			STRING CLASS
-			============
+						STRING CLASS
+						============
 -java.lang package
 -non premitive data type.
 -array of characters.
@@ -53,9 +53,9 @@ syso(s5);//welcome//origional value remains same
 s5=s5.replace('o','O');
 syso(s5);//welcOme;
 
-----------------------------------------------------------
-		WHY STRINGS ARE IMMUTABLE
-		-------------------------
+----------------------------------------------------------------------------------------------------------------------------
+					WHY STRINGS ARE IMMUTABLE
+					-------------------------
 -suppose 3 person are living in the same city.
 
 String raj_city="Delhi";
@@ -80,9 +80,9 @@ or use String Builder/Buffer.
 -If String were not final, a subclass could introduce mutability, breaking the immutability guarantee and potentially causing issues in various parts of the Java platform that rely on string immutability.
 
 
----------------------------------------------------------
-		STRING CONSTANT POOL
-		--------------------
+----------------------------------------------------------------------------------------------------------------------------
+					STRING CONSTANT POOL
+					--------------------
 -Also known as String Literal Pool.
 -it is an area in HEAP memory where java stores String Literals.
 -String objects present in SCP are not applicable for Garbage Collection because a reference variable is internally maintained by JVM.
@@ -90,9 +90,9 @@ or use String Builder/Buffer.
 
 String s ="Aayush";//string literal
 
-----------------------------------------------------------
-	STRING BUILDER   VS   STRING BUFFER
-	-----------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+				STRING BUILDER   VS   STRING BUFFER
+				-----------------------------------
 I)STRING BUILDER :
 ----------------
 -mutable
@@ -109,9 +109,9 @@ II)STRING BUFFER:
 -comparitively slow
 -parallel execution not allowed
 
-----------------------------------------------------------
-		METHODS OF STRING CLASS
-		-----------------------
+----------------------------------------------------------------------------------------------------------------------------
+					METHODS OF STRING CLASS
+					-----------------------
 1)length()
 2)concat()
 3)equals()
@@ -120,10 +120,10 @@ II)STRING BUFFER:
 6)toLowerCase()
 7)toUpperCase()
 
-----------------------------------------------------------
-	DIFFERENCE BETWEEN == AND .equals
-	---------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+					DIFFERENCE BETWEEN == AND .equals
+					---------------------------------
 == : used for REFERENCE COMPARISON
 .equals: used for OBJECT/CONTENT COMPARISON
 
-----------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
