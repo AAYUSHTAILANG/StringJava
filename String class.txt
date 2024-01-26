@@ -1,0 +1,129 @@
+			STRING CLASS
+			============
+-java.lang package
+-non premitive data type.
+-array of characters.
+-String is a Final class in java
+-Immutable object ie cannot be modified.
+
+
+s1==s2//checks Reference equality
+s1.equals(s2)//checks object equality
+
+CASE I:
+------
+//String constructor //Allocates memory in heap
+String s1= new String("Hello");
+String s2= new String("Hello");
+if(s1==s2)//false
+s1.equals(s2);//true
+//creates separate memory in the heap sections
+
+
+CASE II:
+--------
+String s11 =new String("Hello");
+String s22=s11;
+if(s11==s22)//true
+s11.equals(s22);//true
+//points to the same heap memory location
+
+
+CASE III:
+---------
+//String Literal allocates in String Constant Pool
+String s3="Hello";
+String s4="Hello";
+if(s3==s4)//true
+s3.equals(s4);//true
+//Shares the same memory in String Constant Pool
+
+//Sting class
+public final class String implements Serializable,Comparable
+{
+
+
+}
+
+//immutable object
+String s5=new String("welcome");
+s5.replace('o','O');
+syso(s5);//welcome//origional value remains same
+
+s5=s5.replace('o','O');
+syso(s5);//welcOme;
+
+----------------------------------------------------------
+		WHY STRINGS ARE IMMUTABLE
+		-------------------------
+-suppose 3 person are living in the same city.
+
+String raj_city="Delhi";
+String rahul_city="Delhi";
+String rohan_city="Delhi";
+
+//since string literal therefor points at the same memory in the SCP.
+
+-now if the city of rohan changes then city of raj and rahul will also change.
+-in order to avoid this java made Strings immutable.
+
+solution:
+String rohan_new_city="Mumbai";//creates new memory
+or use String Builder/Buffer.
+---------------------------------------------------------
+		WHY STRING CLASS IS FINAL
+		-------------------------
+-String is immutable because its content can't be changed directly, and it's marked as final to prevent anyone from creating a new class that tries to modify its behavior. The final keyword is used to protect the design of the String class itself.
+
+-The String class is designed to be immutable, meaning its values cannot be changed once the object is created. Immutability provides several benefits, including thread safety, caching, and predictable behavior.
+
+-If String were not final, a subclass could introduce mutability, breaking the immutability guarantee and potentially causing issues in various parts of the Java platform that rely on string immutability.
+
+
+---------------------------------------------------------
+		STRING CONSTANT POOL
+		--------------------
+-Also known as String Literal Pool.
+-it is an area in HEAP memory where java stores String Literals.
+-String objects present in SCP are not applicable for Garbage Collection because a reference variable is internally maintained by JVM.
+
+
+String s ="Aayush";//string literal
+
+----------------------------------------------------------
+	STRING BUILDER   VS   STRING BUFFER
+	-----------------------------------
+I)STRING BUILDER :
+----------------
+-mutable
+-non synchronized
+-not thread safe
+-comparitively faster
+-parallel execution possible
+
+II)STRING BUFFER:
+-----------------
+-mutable
+-synchronized
+-thread safe
+-comparitively slow
+-parallel execution not allowed
+
+----------------------------------------------------------
+		METHODS OF STRING CLASS
+		-----------------------
+1)length()
+2)concat()
+3)equals()
+4)equalsIgnoreCase()
+5)replace(,)
+6)toLowerCase()
+7)toUpperCase()
+
+----------------------------------------------------------
+	DIFFERENCE BETWEEN == AND .equals
+	---------------------------------
+== : used for REFERENCE COMPARISON
+.equals: used for OBJECT/CONTENT COMPARISON
+
+----------------------------------------------------------
