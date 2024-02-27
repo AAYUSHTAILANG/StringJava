@@ -1,5 +1,5 @@
-						STRING CLASS
-						============
+			STRING CLASS
+			============
 -java.lang package
 -non premitive data type.
 -array of characters.
@@ -53,9 +53,9 @@ syso(s5);//welcome//origional value remains same
 s5=s5.replace('o','O');
 syso(s5);//welcOme;
 
-----------------------------------------------------------------------------------------------------------------------------
-					WHY STRINGS ARE IMMUTABLE
-					-------------------------
+----------------------------------------------------------
+		WHY STRINGS ARE IMMUTABLE
+		-------------------------
 -suppose 3 person are living in the same city.
 
 String raj_city="Delhi";
@@ -80,9 +80,9 @@ or use String Builder/Buffer.
 -If String were not final, a subclass could introduce mutability, breaking the immutability guarantee and potentially causing issues in various parts of the Java platform that rely on string immutability.
 
 
-----------------------------------------------------------------------------------------------------------------------------
-					STRING CONSTANT POOL
-					--------------------
+---------------------------------------------------------
+		STRING CONSTANT POOL
+		--------------------
 -Also known as String Literal Pool.
 -it is an area in HEAP memory where java stores String Literals.
 -String objects present in SCP are not applicable for Garbage Collection because a reference variable is internally maintained by JVM.
@@ -90,9 +90,9 @@ or use String Builder/Buffer.
 
 String s ="Aayush";//string literal
 
-----------------------------------------------------------------------------------------------------------------------------
-				STRING BUILDER   VS   STRING BUFFER
-				-----------------------------------
+----------------------------------------------------------
+	STRING BUILDER   VS   STRING BUFFER
+	-----------------------------------
 I)STRING BUILDER :
 ----------------
 -mutable
@@ -109,21 +109,121 @@ II)STRING BUFFER:
 -comparitively slow
 -parallel execution not allowed
 
-----------------------------------------------------------------------------------------------------------------------------
-					METHODS OF STRING CLASS
-					-----------------------
-1)length()
-2)concat()
-3)equals()
-4)equalsIgnoreCase()
+---------------------------------------------------------
+		METHODS OF STRING CLASS
+		-----------------------
+1)length()->returns integer
+
+ex: String s = "abcde";
+    sop(s.length()) => 5;
+but String s1 = null;
+    sop(s1.length()) => exception
+
+2)concat() ->return string
+ex:     String co ="Aayush";
+        String co1 ="Tailang";
+        System.out.println(co.concat(co1));//AayushTailang
+
+3)equals() -> returns boolean
+ex: 
+String e="Aayush";
+        String e1="Aayush";
+        String e2="aayush";
+
+        if(e.equals(e1))
+        System.out.println("strings "+e+" "+e1+" are equal");
+        if(!e1.equals(e2))
+        System.out.println("strings "+e1+" "+e2+" are unequal");
+        if(!e2.equals(e))
+        System.out.println("strings "+e2+" "+e+" are unequal");
+
+4)equalsIgnoreCase() -> return boolean
+
+
+
 5)replace(,)
 6)toLowerCase()
 7)toUpperCase()
+8)trim() -> returns String
+*REMOVES THE LEADING AND TRAILING SPACES ONLY 
+ex:String t = "            MATHS                    ";
+   Syso(t.trim());//MATHS //REMOVES THE SPACES 
+   String t1="           abc         xyz            ";
+   System.out.println(t1.trim());//abc         xyz 
 
-----------------------------------------------------------------------------------------------------------------------------
-					DIFFERENCE BETWEEN == AND .equals
-					---------------------------------
+9)compareTo()->returns integer
+	0 -> s1==s2
+	+ -> s1>s2
+	- -> s1<s2
+
+        String c ="a";
+        String c1 ="A";
+
+        System.out.println(c.compareTo(c1));//97-65=32
+
+10)join() 
+-static method
+-join(charSequence delimiter,charSequence... elements)
+-String.join("|",s1,s2);
+
+11)subSequence()
+-returns CharSequence
+-subSequence(int beginIndex, int endIndex)
+-end index is excluded.
+
+12)substring()
+-substring(int)
+-substring(int begin,int end)
+-end index is excluded
+
+13)charAt(i)
+-returns character
+-takes integer as argument.
+
+String s = "Aayush";
+s.charAt(2) => y;
+
+14)valueOf()
+-it converts int, long,float,double or object into String.
+-static method
+-String.valueOf()
+
+int a =10;
+String s = String.valueOf(a);
+
+15)toCharArray()
+-converts String array to character array.
+
+---------------------------------------------------------
+	DIFFERENCE BETWEEN == AND .equals
+	---------------------------------
 == : used for REFERENCE COMPARISON
 .equals: used for OBJECT/CONTENT COMPARISON
 
-----------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------
+		STRING BUFFER
+		-------------
+-java.lang
+-synchronized
+-threadsafe
+	
+-StringBuffer sb = new StringBuffer();
+        System.out.println("capacity is : "+sb.capacity());//Initially 16
+
+-StringBuffer sb1 = new StringBuffer("Aayush");
+        System.out.println("capacity is : "+sb1.capacity());//capacity is : 22
+        //16 + 6 =22
+	
+-StringBuffer class donot override equals method of object class but String class do.
+
+//equals
+        StringBuffer sb2 =new StringBuffer("Aayush");
+        StringBuffer sb3 = new StringBuffer("Aayush");
+        System.out.println(sb2.equals(sb3));//false
+        System.out.println(sb2.toString().equals(sb3.toString()));//true
+
+
+---------------------------------------------------------
+		STRING BUILDER
+		--------------
+
