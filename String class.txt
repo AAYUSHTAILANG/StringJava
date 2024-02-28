@@ -90,25 +90,6 @@ or use String Builder/Buffer.
 
 String s ="Aayush";//string literal
 
-----------------------------------------------------------
-	STRING BUILDER   VS   STRING BUFFER
-	-----------------------------------
-I)STRING BUILDER :
-----------------
--mutable
--non synchronized
--not thread safe
--comparitively faster
--parallel execution possible
-
-II)STRING BUFFER:
------------------
--mutable
--synchronized
--thread safe
--comparitively slow
--parallel execution not allowed
-
 ---------------------------------------------------------
 		METHODS OF STRING CLASS
 		-----------------------
@@ -204,8 +185,10 @@ String s = String.valueOf(a);
 		STRING BUFFER
 		-------------
 -java.lang
--synchronized
+-Mutable
+-synchronized methods
 -threadsafe
+-low performance
 	
 -StringBuffer sb = new StringBuffer();
         System.out.println("capacity is : "+sb.capacity());//Initially 16
@@ -226,4 +209,30 @@ String s = String.valueOf(a);
 ---------------------------------------------------------
 		STRING BUILDER
 		--------------
+-Mutable
+-non synchronised methods
+-High performance
 
+-same like stringbuffer.
+---------------------------------------------------------
+	STRING BUILDER   VS   STRING BUFFER
+	-----------------------------------
+I)STRING BUILDER :
+----------------
+-mutable
+-non synchronized
+-not thread safe
+-comparitively faster
+-parallel execution possible
+
+II)STRING BUFFER:
+-----------------
+-mutable
+-synchronized
+-thread safe
+-comparitively slow
+-parallel execution not allowed
+
+In summary, if you are working in a single-threaded environment or you can manage synchronization externally, StringBuilder is usually preferred due to its better performance. However, if you need to ensure thread safety or are working in a multi-threaded environment, StringBuffer should be used to prevent concurrent modification issues.
+
+---------------------------------------------------------
