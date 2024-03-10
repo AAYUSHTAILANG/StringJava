@@ -1,0 +1,33 @@
+		Character Class
+		===============
+-Wrapper class
+-deals with character manipulation
+
+#Methods:
+---------
+1)isLetter(char ch)
+-returns boolean
+
+2)isDigit(char ch)
+-returns boolean
+
+3)isWhitespace()
+-include space,tab and new line.
+-returns boolean
+
+4)isUpperCase() & isLowerCase()
+-returns boolean
+
+5)toUpperCase() & toLowerCase()
+-returns char of desired form
+
+6)isLetterOrDigit()
+-returns true only if letter or digit.
+
+7)Character.compare(x,y);
+-compares ascii of x and y
+-returns int
+
+Character.compare('A','B') -> -1
+Character.compare('B','A') ->  1
+Character.compare('a','A') -> 32
